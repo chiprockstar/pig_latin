@@ -13,12 +13,8 @@ class PigLatin
       word + 'ay'
     elsif word[0..1] == "qu"
       word[2..-1] + "quay"
-    elsif word[0..2] == "squ"
-       word[3..-1] + "squay"
-    elsif word[0..2] == "thr"
-        word[3..-1] + "thray"
-    elsif word[0..2] == "sch"
-          word[3..-1] + "schay"
+    elsif word[0..2] == "squ" || word[0..2] == "thr" || word[0..2] == "sch"
+       word[3..-1] + word[0..2] + "ay"
     elsif consonants.include?(word[0]) && consonants.include?(word[1])
        word[2..-1] + word[0..1] + 'ay'
     else consonants.include?(word[0])
